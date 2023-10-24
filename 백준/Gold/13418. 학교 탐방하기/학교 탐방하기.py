@@ -27,12 +27,14 @@ def union(a, b, c):
 n, m = map(int, input().split())
 arr = [list(map(int, input().split())) for _ in range(m+1)]
 
+# 최대 신장 트리
 arr.sort(key= lambda x:x[2])
 visited = [i for i in range(n + 1)]
 Max = 0
 for a,b,c in arr:
     Max += union(a, b, c)
 
+# 최소 신장 트리
 arr.sort(key= lambda x:-x[2])
 visited = [i for i in range(n + 1)]
 Min = 0
