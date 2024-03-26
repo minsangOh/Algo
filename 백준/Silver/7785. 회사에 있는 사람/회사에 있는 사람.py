@@ -5,18 +5,15 @@ def input(): return sys.stdin.readline()
 
 
 n = int(input())
-bucket = {}
-lst = []
+bucket = set()
 for _ in range(n):
     name, flag = input().split()
-    bucket[name] = flag
-
-for name, flag in bucket.items():
     if flag == 'enter':
-        lst.append(name)
+        bucket.add(name)
+    else:
+        bucket.discard(name)
 
-reverse_lst = reversed(sorted(lst))
 
-for i in reverse_lst:
+for i in sorted(bucket, reverse=True):
     print(i)
 
