@@ -1,7 +1,7 @@
 import sys
 
 
-def input(): return sys.stdin.readline()
+def input(): return sys.stdin.readline().rstrip()
 
 
 student, length = map(int, input().split())
@@ -15,4 +15,4 @@ for number in lst:
 
 for idx, key in enumerate(dic.keys()):
     if idx == student: break
-    print(key, end='')
+    print(key)
