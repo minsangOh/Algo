@@ -12,18 +12,17 @@ int main() {
         cin >> coins[i];
     }
 
-    // 내림차순 정렬
-    sort(coins.rbegin(), coins.rend());
+    sort(coins.begin(), coins.end(), greater<int>());
 
-    int count = 0;
+    int cnt = 0;
     for (int i = 0; i < n; ++i) {
         if (coins[i] <= k) {
-            count += k / coins[i];
+            cnt += k / coins[i];
             k %= coins[i];
         }
     }
 
-    cout << count << endl;
+    cout << cnt << endl;
 
     return 0;
 }
